@@ -22,7 +22,7 @@
 ## Phases
 
 ### Phase 1: Foundation — Supabase + Auth + Landing
-**Status**: 🟡 In Progress
+**Status**: ✅ Complete
 **Objective**: Scaffold the Next.js 14 project, configure Supabase (Auth, DB schema, RLS, Storage), build the full Landing page (hero, features bento, pricing toggle, footer with Razorpay CTA), and wire up Auth flow (sign-in, sign-up, dashboard redirect).
 **Requirements**: REQ-01 (project scaffold), REQ-02 (Supabase), REQ-03 (Auth), REQ-04 (Landing)
 **Deliverables**:

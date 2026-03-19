@@ -1,11 +1,19 @@
-// Temporary placeholder — full landing page built in Plan 1.3
-export default function HomePage() {
+import { Navbar } from '@/components/landing/navbar'
+import { Hero } from '@/components/landing/hero'
+import { Features } from '@/components/landing/features'
+import { Pricing } from '@/components/landing/pricing'
+import { Testimonials } from '@/components/landing/testimonials'
+import { Footer } from '@/components/landing/footer'
+
+export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-[#0f172a] flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-white mb-4">FreelanceOS</h1>
-        <p className="text-slate-400">Landing page coming soon...</p>
-      </div>
-    </main>
-  );
+    <>
+      <Navbar />
+      <Hero />
+      <Features />
+      <Pricing />
+      <Testimonials />
+      <Footer />
+    </>
+  )
 }
