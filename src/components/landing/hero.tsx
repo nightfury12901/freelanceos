@@ -2,74 +2,129 @@
 
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowRight, FileCheck, CheckCircle2 } from 'lucide-react'
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-4 text-center bg-[#050505]">
-      {/* Liquid Glass Ambient Orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-amber-500/10 rounded-[100%] blur-[120px] opacity-70 animate-pulse mix-blend-screen pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[400px] bg-blue-500/10 rounded-[100%] blur-[120px] opacity-40 mix-blend-screen pointer-events-none" />
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden px-4 md:px-8 bg-[#F8F9FA] pt-40 pb-20 border-b border-slate-200">
       
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none" />
+      {/* Soft radiant glow behind the text */}
+      <div className="absolute top-20 left-0 w-[800px] h-[600px] bg-emerald-100/40 rounded-[100%] blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-5xl space-y-10 mt-16">
-        <motion.div
-           initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
-           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-           transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }}
-           className="mx-auto flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-md px-5 py-2 text-sm font-medium text-zinc-300 shadow-2xl"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-          </span>
-          Next-Gen Compliance for India
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="text-6xl font-bold tracking-tight sm:text-8xl font-sans text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-sm pb-2"
-        >
-          Your GST Workflow,<br />
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-amber-500 to-amber-600">Perfectly Sorted.</span>
-        </motion.h1>
-
-        <motion.p
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: shouldReduceMotion ? 0 : 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-           className="mx-auto max-w-2xl text-lg text-zinc-400 sm:text-xl font-light leading-relaxed"
-        >
-          Invoices. Contracts. e-FIRA tracker. Seamlessly integrated into one premium dashboard. Automate your tax filing for just ₹299/mo.
-        </motion.p>
-
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: shouldReduceMotion ? 0 : 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
-        >
-          <Link href="/auth/register" className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-full bg-amber-500 px-8 font-medium text-black transition-all duration-300 hover:scale-105 hover:bg-amber-400 hover:shadow-[0_0_40px_rgba(245,158,11,0.5)]">
-            <span className="relative z-10 flex items-center gap-2 text-lg font-bold">
-              Start Free Trial
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/000000/svg" className="transition-transform duration-300 group-hover:translate-x-1"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
+      <div className="relative z-10 mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        {/* Left Copy Section */}
+        <div className="space-y-8 max-w-2xl">
+          <motion.div
+             initial={{ opacity: 0, y: 10 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
+             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold text-slate-600 uppercase tracking-widest shadow-sm"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-          </Link>
-          <Link href="#features" className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-8 font-medium text-white transition-all duration-300 hover:bg-white/10 hover:border-white/20">
-            Explore Features
-          </Link>
+            Tier-One Compliance Stack
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 1, delay: 0.1 }}
+            className="text-5xl lg:text-7xl font-playfair font-medium text-slate-900 leading-[1.1] tracking-tight"
+          >
+            Compliance that <br />
+            <span className="italic text-emerald-800">commands trust.</span>
+          </motion.h1>
+
+          <motion.p
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: shouldReduceMotion ? 0 : 0.2, duration: 1 }}
+             className="text-lg text-slate-600 leading-relaxed max-w-md font-sans"
+          >
+            FreelanceOS brings institutional-grade financial structure to your solo practice. Generate GST & LUT invoices, track e-FIRA, and stay impeccably compliant in India.
+          </motion.p>
+
+          <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: shouldReduceMotion ? 0 : 0.3, duration: 1 }}
+             className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+          >
+            <Link href="/auth/register" className="group flex h-14 w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-emerald-800 px-8 font-medium text-white transition-all duration-300 hover:bg-emerald-900 shadow-[0_8px_20px_rgb(6,78,59,0.15)] hover:shadow-[0_12px_25px_rgb(6,78,59,0.25)] hover:-translate-y-0.5">
+              Start Your Free Trial
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <p className="text-sm text-slate-500 font-medium">No credit card required.</p>
+          </motion.div>
+        </div>
+
+        {/* Right Graphical Composition */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95, rotate: -2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 2 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          className="relative lg:ml-auto w-full max-w-[500px]"
+        >
+           {/* Abstract Invoice Card */}
+           <div className="relative bg-white rounded-2xl p-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-slate-100/50 backdrop-blur-2xl transition-transform duration-700 hover:rotate-0">
+              
+              {/* Header */}
+              <div className="flex justify-between items-start mb-10 pb-6 border-b border-slate-100">
+                <div>
+                  <div className="h-6 w-24 bg-slate-200 rounded animate-pulse" />
+                  <div className="h-3 w-32 bg-slate-100 rounded mt-3" />
+                </div>
+                <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700">
+                  <FileCheck className="h-5 w-5" />
+                </div>
+              </div>
+
+              {/* Line Items */}
+              <div className="space-y-6 mb-10">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="flex justify-between items-center group">
+                    <div className="flex items-center gap-4">
+                      <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      <div>
+                        <div className="h-4 w-40 bg-slate-100 rounded mb-2" />
+                        <div className="h-2 w-20 bg-slate-50 rounded" />
+                      </div>
+                    </div>
+                    <div className="h-4 w-16 bg-slate-200 rounded" />
+                  </div>
+                ))}
+              </div>
+
+              {/* Total */}
+              <div className="pt-6 border-t border-slate-100 flex justify-between items-end">
+                <div className="h-4 w-24 bg-slate-100 rounded" />
+                <div className="h-8 w-32 bg-emerald-900 rounded" />
+              </div>
+              
+              {/* Floating Element */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -right-12 -bottom-10 bg-white p-4 rounded-xl shadow-2xl border border-slate-100 flex items-center gap-3"
+              >
+                <div className="h-10 w-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                  <span className="text-emerald-700 font-bold text-lg">₹</span>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">GSTR-1 Filed</p>
+                  <p className="text-sm font-bold text-slate-900">Successfully</p>
+                </div>
+              </motion.div>
+           </div>
         </motion.div>
       </div>
-      
-      {/* Bottom Fade Mask */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
     </section>
   )
 }

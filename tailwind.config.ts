@@ -61,6 +61,7 @@ export default {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        playfair: ["var(--font-playfair)", "serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
