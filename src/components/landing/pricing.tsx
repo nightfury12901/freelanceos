@@ -59,7 +59,7 @@ export function Pricing() {
                 )}
               >
                 {isPro && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-white px-5 py-1.5 text-xs font-bold text-emerald-900 tracking-widest uppercase shadow-md">
+                  <div className="mb-6 inline-flex w-max rounded-full bg-emerald-800 px-4 py-1.5 text-xs font-bold text-emerald-100 tracking-widest uppercase shadow-sm">
                     Most Popular
                   </div>
                 )}
@@ -70,8 +70,8 @@ export function Pricing() {
                 </div>
 
                 <div className="mb-6 flex items-baseline">
-                  <span className={cn("text-3xl font-medium mr-1", isPro ? "text-emerald-400" : "text-slate-400")}>₹</span>
-                  <span className="text-6xl font-semibold tracking-[-0.04em] relative h-[72px] overflow-hidden flex items-center min-w-[3ch]">
+                  <span className={cn("text-3xl font-medium mr-1.5", isPro ? "text-emerald-400" : "text-slate-400")}>₹</span>
+                  <span className="text-6xl font-semibold tracking-[-0.04em] relative inline-flex overflow-hidden min-w-[3ch]">
                     <AnimatePresence mode="popLayout">
                       <motion.span
                         key={billing === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice}
@@ -79,7 +79,7 @@ export function Pricing() {
                         animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
                         exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute left-0"
+                        className="inline-block"
                       >
                         {billing === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice}
                       </motion.span>
