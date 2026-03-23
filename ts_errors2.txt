@@ -1,1 +1,0 @@
-﻿src/components/landing/pricing.tsx(127,15): error TS17002: Expected corresponding JSX closing tag for 'motion.div'.
