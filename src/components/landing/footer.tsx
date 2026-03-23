@@ -1,82 +1,87 @@
+'use client'
+
 import Link from 'next/link'
-import { Github, Twitter, Linkedin, ArrowRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Twitter, Linkedin } from 'lucide-react'
 
 export function Footer() {
-  return (
-    <footer className="bg-[#F8F9FA] pt-32 pb-8 px-4 overflow-hidden">
+  const [timeStr, setTimeStr] = useState('D2026-03-23 T10:45:00')
+
+  useEffect(() => {
+    const tick = () => {
+      const d = new Date()
+      const pad = (n: number) => n.toString().padStart(2, '0')
       
-      <div className="mx-auto max-w-7xl">
-        {/* CTA Section Top */}
-        <div className="mb-32 rounded-3xl border border-emerald-100 bg-emerald-50/50 px-6 py-24 text-center sm:px-12 shadow-sm">
-          <h2 className="mb-6 text-5xl font-playfair font-medium text-emerald-900 sm:text-6xl tracking-tight">
-            Ready to sort your compliance?
-          </h2>
-          <p className="mb-10 text-xl font-medium text-emerald-800/70 max-w-2xl mx-auto">
-            Join thousands of Indian freelancers saving hours every month with FreelanceOS.
-          </p>
-          <Link href="/auth/register" className="inline-flex h-16 items-center justify-center gap-3 rounded-lg bg-emerald-800 px-10 text-lg font-semibold text-white transition-all hover:bg-emerald-900 hover:scale-[1.02] shadow-[0_8px_20px_rgb(6,78,59,0.15)]">
-            Start Free — ₹0
-            <ArrowRight className="h-5 w-5" />
-          </Link>
-        </div>
+      const yr = d.getFullYear()
+      const mo = pad(d.getMonth() + 1)
+      const dy = pad(d.getDate())
+      
+      const hr = pad(d.getHours())
+      const mi = pad(d.getMinutes())
+      const sc = pad(d.getSeconds())
+      
+      setTimeStr(`D${yr}-${mo}-${dy} T${hr}:${mi}:${sc}`)
+    }
+    tick()
+    const int = setInterval(tick, 1000)
+    return () => clearInterval(int)
+  }, [])
 
-        {/* Links Grid */}
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:gap-16 mb-24">
-          <div>
-            <h3 className="mb-6 font-bold text-slate-900 tracking-widest uppercase text-xs">Product</h3>
-            <ul className="space-y-4 text-sm text-slate-600 font-medium">
-              <li><Link href="#features" className="hover:text-emerald-700 transition-colors duration-300">Features</Link></li>
-              <li><Link href="#pricing" className="hover:text-emerald-700 transition-colors duration-300">Pricing</Link></li>
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">Changelog</Link></li>
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">Integrations</Link></li>
-            </ul>
+  return (
+    <footer className="bg-[#e5e5e5] text-[#050505] px-6 py-12 md:px-12 md:py-16 flex flex-col w-full font-mono relative overflow-hidden z-20">
+      
+      {/* Top Row: Logo + Links + Contact */}
+      <div className="flex flex-col md:flex-row justify-between items-start gap-12 border-b border-black/10 pb-16 w-full max-w-[1400px] mx-auto">
+        <div className="flex gap-8 md:gap-16">
+          <div className="w-12 h-12 rounded-full border-2 border-black/20 flex items-center justify-center font-bold text-xl shrink-0">
+            F
           </div>
-          <div>
-            <h3 className="mb-6 font-bold text-slate-900 tracking-widest uppercase text-xs">Legal</h3>
-            <ul className="space-y-4 text-sm text-slate-600 font-medium">
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">Refund Policy</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="mb-6 font-bold text-slate-900 tracking-widest uppercase text-xs">Resources</h3>
-            <ul className="space-y-4 text-sm text-slate-600 font-medium">
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">GST Guide for Freelancers</Link></li>
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">SAC Code Finder</Link></li>
-              <li><Link href="#" className="hover:text-emerald-700 transition-colors duration-300">LUT Application Process</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="mb-6 font-bold text-slate-900 tracking-widest uppercase text-xs">Connect</h3>
-            <div className="flex space-x-5">
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-600 hover:text-emerald-700 hover:border-emerald-200 transition-all duration-300 shadow-sm">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-600 hover:text-emerald-700 hover:border-emerald-200 transition-all duration-300 shadow-sm">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="flex h-10 w-10 items-center justify-center rounded-full bg-white border border-slate-200 text-slate-600 hover:text-emerald-700 hover:border-emerald-200 transition-all duration-300 shadow-sm">
-                <span className="sr-only">GitHub</span>
-                <Github className="h-5 w-5" />
-              </Link>
-            </div>
+          <div className="flex flex-col gap-1.5 text-[12px] md:text-[14px] tracking-widest uppercase font-semibold">
+            <Link href="#pricing" className="hover:text-black/50 transition-colors">Invoicing</Link>
+            <Link href="#features" className="hover:text-black/50 transition-colors">Contracts</Link>
+            <Link href="#features" className="hover:text-black/50 transition-colors">e-FIRA</Link>
+            <Link href="#pricing" className="hover:text-black/50 transition-colors">CRM Dashboard</Link>
+            <Link href="#features" className="hover:text-black/50 transition-colors">About</Link>
           </div>
         </div>
-
-        <div className="flex flex-col items-center justify-between border-t border-slate-200 pt-10 sm:flex-row">
-          <p className="text-sm font-medium text-slate-500">
-            © 2026 <span className="text-slate-900 font-semibold font-playfair">FreelanceOS</span>. Made in India 🇮🇳
-          </p>
-          <div className="mt-6 flex space-x-6 sm:mt-0">
-            <Link href="#" className="text-sm font-medium text-slate-500 hover:text-emerald-700 transition-colors duration-300">
-              Support: help@freelanceos.in
-            </Link>
+        
+        <div className="flex flex-col md:items-end gap-3 text-[12px] md:text-[14px] tracking-widest font-semibold uppercase mt-8 md:mt-0">
+          <a href="mailto:hello@freelanceos.dev" className="hover:text-black/50 transition-colors underline underline-offset-4 decoration-black/20 hover:decoration-black">
+            HELLO@FREELANCEOS.DEV
+          </a>
+          <div className="flex gap-5 mt-2">
+            <Twitter className="h-5 w-5 hover:text-black/50 transition-colors cursor-pointer" />
+            <Linkedin className="h-5 w-5 hover:text-black/50 transition-colors cursor-pointer" />
           </div>
         </div>
       </div>
+
+      {/* Middle Row: Massive Live Date Time */}
+      <div className="pt-24 pb-16 w-full text-left max-w-[1400px] mx-auto">
+        <h2 className="text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold tracking-tighter tabular-nums leading-none opacity-90">
+          {timeStr}
+        </h2>
+      </div>
+
+      {/* Bottom Massive Inverted Text */}
+      <div className="w-full flex justify-center py-12 border-b border-black/10 overflow-hidden">
+        <h1 
+           className="text-[14vw] md:text-[13.5vw] leading-[0.70] font-black tracking-tighter whitespace-nowrap opacity-90 scale-x-[-1] scale-y-[-1] select-none uppercase"
+           aria-hidden="true"
+        >
+          Freelance OS
+        </h1>
+      </div>
+
+      {/* Credits */}
+      <div className="flex flex-col md:flex-row justify-between items-center pt-8 text-[11px] md:text-[12px] font-semibold tracking-wider text-black/40 uppercase max-w-[1400px] mx-auto w-full">
+        <div>© {new Date().getFullYear()} FREELANCE OS. ALL RIGHTS RESERVED.</div>
+        <div className="flex gap-8 mt-6 md:mt-0">
+          <Link href="#" className="hover:text-black/80 transition-colors">Privacy Policy</Link>
+          <Link href="#" className="hover:text-black/80 transition-colors">Terms of Service</Link>
+        </div>
+      </div>
+
     </footer>
   )
 }

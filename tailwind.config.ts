@@ -10,18 +10,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: "#0f172a",
-          50: "#f8fafc",
-          100: "#f1f5f9",
-          900: "#0f172a",
-          950: "#020617",
-        },
-        teal: {
-          DEFAULT: "#14b8a6",
-          400: "#2dd4bf",
-          500: "#14b8a6",
-          600: "#0d9488",
+        brand: {
+          900: "#222831", // Deep dark bg
+          800: "#393E46", // Card bg / Borders
+          accent: "#00ADB5", // Teal accent
+          text: "#EEEEEE",   // Light text
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

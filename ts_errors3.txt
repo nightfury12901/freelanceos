@@ -1,0 +1,11 @@
+﻿src/app/dashboard/invoices/new/page.tsx(26,8): error TS2307: Cannot find module '@/components/ui/form' or its corresponding type declarations.
+src/app/dashboard/invoices/new/page.tsx(132,28): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(188,34): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(212,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(226,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(241,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(255,30): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(305,34): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(319,34): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(344,34): error TS7031: Binding element 'field' implicitly has an 'any' type.
+src/app/dashboard/invoices/new/page.tsx(373,34): error TS7031: Binding element 'field' implicitly has an 'any' type.

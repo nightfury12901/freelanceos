@@ -2,52 +2,63 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion } from 'framer-motion'
-import { LayoutDashboard, FileText, Globe, FileSignature, CreditCard } from 'lucide-react'
-import { staggerContainer, fadeUp } from '@/lib/animations'
+import { LayoutDashboard, FileText, Globe, FileSignature, CreditCard, Users } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navItems = [
-  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/dashboard/invoices', label: 'Invoices', icon: FileText },
-  { href: '/dashboard/efira', label: 'e-FIRA', icon: Globe },
-  { href: '/dashboard/contracts', label: 'Contracts', icon: FileSignature },
-  { href: '/dashboard/billing', label: 'Billing', icon: CreditCard },
+  { href: '/dashboard',                  label: 'Overview',   icon: LayoutDashboard },
+  { href: '/dashboard/invoices',         label: 'Invoices',   icon: FileText },
+  { href: '/dashboard/clients',          label: 'Clients',    icon: Users },
+  { href: '/dashboard/efira',            label: 'e-FIRA',     icon: Globe },
+  { href: '/dashboard/contracts',        label: 'Contracts',  icon: FileSignature },
+  { href: '/dashboard/settings/billing', label: 'Billing',    icon: CreditCard },
 ]
 
 export function DashboardNav() {
   const pathname = usePathname()
 
   return (
-    <nav className="space-y-1 px-3">
-      <motion.ul
-        variants={staggerContainer}
-        initial="hidden"
-        animate="visible"
-        className="space-y-1"
-      >
+    <nav className="px-2 pt-2">
+      <ul className="space-y-0.5">
         {navItems.map((item) => {
-          const isActive = pathname === item.href
+          const isActive =
+            pathname === item.href ||
+            (item.href !== '/dashboard' && pathname.startsWith(item.href))
           const Icon = item.icon
 
           return (
-            <motion.li key={item.href} variants={fadeUp}>
+            <li key={item.href}>
               <Link
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 border-l-2",
+                  'group flex items-center gap-3 rounded-[8px] px-3 py-2.5 text-[13px] font-medium transition-colors duration-150',
                   isActive
-                    ? "border-teal-400 bg-white/10 text-teal-400"
-                    : "border-transparent text-slate-400 hover:bg-white/5 hover:text-slate-200"
+                    ? 'bg-[var(--dash-sidebar-active-bg)] text-[var(--dash-sidebar-fg)]'
+                    : 'text-[var(--dash-sidebar-muted)] hover:text-[var(--dash-sidebar-fg)] hover:bg-[var(--dash-sidebar-active-bg)]'
                 )}
               >
-                <Icon className="h-5 w-5 shrink-0" />
+                <Icon
+                  className={cn(
+                    'h-4 w-4 shrink-0 transition-colors duration-150',
+                    isActive
+                      ? 'text-[var(--dash-accent)]'
+                      : 'text-[var(--dash-sidebar-muted)] group-hover:text-[var(--dash-sidebar-fg)]'
+                  )}
+                />
                 {item.label}
+
+                {/* Active left indicator */}
+                {isActive && (
+                  <span
+                    className="ml-auto h-1.5 w-1.5 rounded-full"
+                    style={{ background: 'var(--dash-accent)' }}
+                  />
+                )}
               </Link>
-            </motion.li>
+            </li>
           )
         })}
-      </motion.ul>
+      </ul>
     </nav>
   )
 }

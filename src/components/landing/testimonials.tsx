@@ -53,19 +53,19 @@ export function Testimonials() {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <section className="bg-white py-32 overflow-hidden border-b border-slate-200">
+    <section className="bg-background py-32 overflow-hidden border-b border-border">
       <div className="mb-24 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-5xl font-playfair font-medium tracking-tight text-slate-900 sm:text-6xl">
+        <h2 className="text-5xl font-playfair font-medium tracking-tight text-foreground sm:text-6xl">
           Trusted by India's top <br />
-          <span className="italic font-light text-slate-500">independent talent.</span>
+          <span className="italic font-light text-muted-foreground">independent talent.</span>
         </h2>
       </div>
 
       <div className="relative flex max-w-[100vw] overflow-hidden py-4">
         {/* Left gradient mask */}
-        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
         {/* Right gradient mask */}
-        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
         <motion.div
            className="flex gap-6 px-6"
@@ -80,13 +80,13 @@ export function Testimonials() {
           {[...TESTIMONIALS, ...TESTIMONIALS].map((t, idx) => (
             <div 
               key={idx} 
-              className="group flex w-[400px] shrink-0 flex-col justify-between rounded-3xl border border-slate-200 bg-[#F8F9FA] p-10 transition-shadow duration-300 hover:shadow-xl hover:bg-white"
+              className="group flex w-[400px] shrink-0 flex-col justify-between rounded-3xl border border-border bg-card p-10 transition-shadow duration-300 hover:shadow-xl hover:bg-muted"
             >
               <div className="mb-10">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/000000/svg" className="text-slate-300 mb-6 group-hover:text-emerald-500 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/000000/svg" className="text-muted-foreground opacity-50 mb-6 group-hover:text-primary transition-colors">
                   <path d="M10 11C10 14.3137 7.31371 17 4 17C3.44772 17 3 16.5523 3 16C3 15.4477 3.44772 15 4 15C5.10457 15 6 14.1046 6 13V11C6 9.89543 6.89543 9 8 9H10C10.5523 9 11 9.44772 11 10V11ZM21 11C21 14.3137 18.3137 17 15 17C14.4477 17 14 16.5523 14 16C14 15.4477 14.4477 15 15 15C16.1046 15 17 14.1046 17 13V11C17 9.89543 17.8954 9 19 9H21C21.5523 9 22 9.44772 22 10V11Z" fill="currentColor"/>
                 </svg>
-                <p className="text-slate-700 leading-relaxed text-lg font-medium">
+                <p className="text-foreground leading-relaxed text-lg font-medium">
                   "{t.quote}"
                 </p>
               </div>
@@ -96,8 +96,8 @@ export function Testimonials() {
                   {t.initials}
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900 text-base">{t.name}</h4>
-                  <p className="text-sm text-slate-500 font-medium">{t.role}</p>
+                  <h4 className="font-bold text-foreground text-base">{t.name}</h4>
+                  <p className="text-sm text-muted-foreground font-medium">{t.role}</p>
                 </div>
               </div>
             </div>

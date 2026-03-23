@@ -1,6 +1,6 @@
 // All tax constants, SAC codes, plan limits, and compliance dates
 
-// SAC Codes for IT/creative services
+// SAC Codes mapping
 export const SAC_CODES = {
   software_development: "998314",
   web_development: "998314",
@@ -13,11 +13,32 @@ export const SAC_CODES = {
   data_analytics: "998346",
 } as const;
 
+export const SAC_OPTIONS = [
+  { value: "998314", label: "Information Technology (IT) Design and Development Services" },
+  { value: "998313", label: "Information Technology (IT) Consulting and Support Services" },
+  { value: "998319", label: "Other professional, technical and business services" },
+  { value: "998361", label: "Advertising Services" },
+  { value: "998390", label: "Other professional, technical and business services n.e.c." },
+] as const;
+
 // GST Rates
-export const GST_RATES = {
-  standard: 18,
-  export: 0, // LUT exports are zero-rated
-} as const;
+export const GST_RATE_OPTIONS = [
+  { value: 0, label: "0% (Export/LUT)" },
+  { value: 18, label: "18% (Standard)" },
+] as const;
+
+// Indian States for GST (Place of Supply)
+export const INDIAN_STATES = [
+  { code: "27", name: "Maharashtra" },
+  { code: "29", name: "Karnataka" },
+  { code: "07", name: "Delhi" },
+  { code: "33", name: "Tamil Nadu" },
+  { code: "36", name: "Telangana" },
+  { code: "09", name: "Uttar Pradesh" },
+  { code: "24", name: "Gujarat" },
+  { code: "19", name: "West Bengal" },
+  { code: "00", name: "Other (Export)" },
+] as const;
 
 // Plan Limits
 export const PLAN_LIMITS = {
@@ -77,7 +98,7 @@ export const SUBSCRIPTION_PLANS = [
       "Email compliance reminders",
       "GST filing reminders",
     ],
-    cta: "Start Pro",
+    cta: "Start 1st Month Free",
     highlighted: true,
   },
   {
@@ -94,7 +115,7 @@ export const SUBSCRIPTION_PLANS = [
       "Advanced analytics",
       "Early access to new features",
     ],
-    cta: "Start Agency",
+    cta: "Start 1st Month Free",
     highlighted: false,
   },
 ] as const;

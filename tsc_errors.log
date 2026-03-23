@@ -1,0 +1,14 @@
+src/app/api/dashboard/stats/route.ts(51,61): error TS2339: Property 'invoice_id' does not exist on type 'never'.
+src/app/api/dashboard/stats/route.ts(53,41): error TS2339: Property 'id' does not exist on type 'never'.
+src/app/api/dashboard/stats/route.ts(60,19): error TS2339: Property 'lut_filed' does not exist on type 'never'.
+src/app/api/dashboard/stats/route.ts(70,19): error TS2339: Property 'gstin' does not exist on type 'never'.
+src/app/api/dashboard/stats/route.ts(80,28): error TS2339: Property 'plan_tier' does not exist on type 'never'.
+src/app/api/dashboard/stats/route.ts(81,28): error TS2339: Property 'lut_filed' does not exist on type 'never'.
+src/app/api/dashboard/stats/route.ts(83,30): error TS2339: Property 'gstin' does not exist on type 'never'.
+src/app/dashboard/page.tsx(62,59): error TS2339: Property 'invoice_id' does not exist on type 'never'.
+src/app/dashboard/page.tsx(64,39): error TS2339: Property 'id' does not exist on type 'never'.
+src/app/dashboard/page.tsx(68,17): error TS2339: Property 'lut_filed' does not exist on type 'never'.
+src/app/dashboard/page.tsx(70,17): error TS2339: Property 'gstin' does not exist on type 'never'.
+src/app/dashboard/page.tsx(73,27): error TS2339: Property 'plan_tier' does not exist on type 'never'.
+src/app/dashboard/page.tsx(82,37): error TS2339: Property 'name' does not exist on type 'never'.
+src/app/dashboard/page.tsx(206,28): error TS2339: Property 'lut_filed' does not exist on type 'never'.
