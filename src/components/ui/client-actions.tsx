@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Loader2, Pencil, Trash2 } from 'lucide-react'
+import { Loader2, Trash2 } from 'lucide-react'
 import type { ClientStatus } from '@/lib/supabase/types'
 
 const STATUS_OPTIONS: { value: ClientStatus; label: string }[] = [

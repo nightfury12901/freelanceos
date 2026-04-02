@@ -4,7 +4,8 @@ import { createClient } from '@/lib/supabase/server'
 // PATCH /api/clients/[id]  — update a client
 // DELETE /api/clients/[id] — delete a client
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -21,7 +22,7 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   const { data, error } = await (supabase as any)
     .from('clients')
     .update(updates)
-    .eq('id', params.id)
+    .eq('id', id)
     .eq('user_id', user.id)
     .select()
     .single()
@@ -30,7 +31,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(data)
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -38,7 +40,7 @@ export async function DELETE(_req: NextRequest, { params }: { params: { id: stri
   const { error } = await (supabase as any)
     .from('clients')
     .delete()
-    .eq('id', params.id)
+    .eq('id', id)
     .eq('user_id', user.id)
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })

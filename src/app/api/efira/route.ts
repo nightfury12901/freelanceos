@@ -152,11 +152,7 @@ export async function POST(req: NextRequest) {
 
     // Get public URL (documents bucket is private, but we use a signed URL strategy later, 
     // or store the path and fetch signed URLs on the fly. We'll store the path.)
-    const { data: signedData } = await supabase.storage
-      .from("documents")
-      .createSignedUrl(filename, 3600);
-      
-    const fileUrl = signedData?.signedUrl ?? filename;
+    // Signed URL is generated on-demand; we store the storage path in file_url
 
     // Insert to DB
     const { data: document, error: dbError } = await supabase

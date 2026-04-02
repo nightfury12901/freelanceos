@@ -1,7 +1,7 @@
 import { redirect, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
-import { ArrowLeft, Mail, Phone, Tag, Plus, Receipt } from 'lucide-react'
+import { ArrowLeft, Mail, Phone, Tag, Receipt } from 'lucide-react'
 import type { ClientStatus } from '@/lib/supabase/types'
 import { ClientActions } from '@/components/ui/client-actions'
 import { ProjectTracker } from '@/components/ui/project-tracker'
@@ -216,7 +216,7 @@ export default async function ClientDetailPage({ params }: { params: Promise<{ i
             >
               <h4 className="text-[11px] font-bold uppercase tracking-widest mb-4 opacity-60">Strategic Context</h4>
               <p className="text-[13px] leading-relaxed opacity-80 italic" style={{ color: T.fg }}>
-                "{client.notes}"
+                &quot;{client.notes}&quot;
               </p>
             </div>
            )}

@@ -25,7 +25,7 @@ export async function updateProfile(formData: FormData) {
 
   const { error } = await supabase
     .from('users')
-    .update(updates)
+    .update(updates as never)
     .eq('id', user.id)
 
   if (error) {

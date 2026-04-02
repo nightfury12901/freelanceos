@@ -57,7 +57,6 @@ export async function GET(
     const freelancerName = seller?.name || user.email || "Freelancer";
 
     // 5. Parse Fields JSON
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const fields = contract.fields_json as any;
 
     // 6. Generate PDF Buffer
@@ -93,7 +92,7 @@ export async function GET(
     }
 
     // 8. Sign URL
-    const { data: signedData, error: signError } = await supabase.storage
+    const { data: signedData } = await supabase.storage
       .from("documents")
       .createSignedUrl(filename, 3600);
 

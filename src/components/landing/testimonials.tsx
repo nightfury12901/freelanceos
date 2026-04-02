@@ -56,7 +56,7 @@ export function Testimonials() {
     <section className="bg-background py-32 overflow-hidden border-b border-border">
       <div className="mb-24 text-center px-4 max-w-4xl mx-auto">
         <h2 className="text-5xl font-playfair font-medium tracking-tight text-foreground sm:text-6xl">
-          Trusted by India's top <br />
+          Trusted by India&apos;s top <br />
           <span className="italic font-light text-muted-foreground">independent talent.</span>
         </h2>
       </div>
@@ -87,7 +87,7 @@ export function Testimonials() {
                   <path d="M10 11C10 14.3137 7.31371 17 4 17C3.44772 17 3 16.5523 3 16C3 15.4477 3.44772 15 4 15C5.10457 15 6 14.1046 6 13V11C6 9.89543 6.89543 9 8 9H10C10.5523 9 11 9.44772 11 10V11ZM21 11C21 14.3137 18.3137 17 15 17C14.4477 17 14 16.5523 14 16C14 15.4477 14.4477 15 15 15C16.1046 15 17 14.1046 17 13V11C17 9.89543 17.8954 9 19 9H21C21.5523 9 22 9.44772 22 10V11Z" fill="currentColor"/>
                 </svg>
                 <p className="text-foreground leading-relaxed text-lg font-medium">
-                  "{t.quote}"
+                  &quot;{t.quote}&quot;
                 </p>
               </div>
 

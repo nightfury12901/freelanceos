@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Success! Update Supabase Profile
-    const { error: dbError } = await (supabase as any) // eslint-disable-line @typescript-eslint/no-explicit-any
+    const { error: dbError } = await (supabase as any)
       .from("users")
       .update({ plan_tier: "pro" }) // Promote to Pro
       .eq("id", user.id);

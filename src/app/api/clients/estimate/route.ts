@@ -59,10 +59,10 @@ Return ONLY a valid JSON object matching this exact structure. Do not wrap it in
     const estimateData = JSON.parse(responseContent)
 
     return NextResponse.json(estimateData)
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Groq Estimation Error:', error)
     return NextResponse.json(
-      { error: error.message || 'Failed to generate estimate' },
+      { error: error instanceof Error ? error.message : 'Failed to generate estimate' },
       { status: 500 }
     )
   }

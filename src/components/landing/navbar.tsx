@@ -2,8 +2,7 @@
 
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
-import { Layers, Sun, Moon } from 'lucide-react'
-import { useTheme } from '@/components/ui/theme-provider'
+import { Layers } from 'lucide-react'
 
 export function Navbar() {
   const shouldReduceMotion = useReducedMotion()

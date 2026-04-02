@@ -131,7 +131,6 @@ export async function POST(req: NextRequest) {
 
     const { data: invoice, error: insertError } = await supabase
       .from("invoices")
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .insert(insertPayload as any)
       .select()
       .single();

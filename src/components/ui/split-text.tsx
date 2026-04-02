@@ -1,14 +1,12 @@
 'use client'
 
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
-import { type ReactNode } from 'react'
 
 interface SplitTextProps {
   children: string
   className?: string
   delay?: number
   staggerDelay?: number
-  as?: 'h1' | 'h2' | 'h3' | 'p' | 'span'
 }
 
 export function SplitText({
@@ -16,7 +14,6 @@ export function SplitText({
   className = '',
   delay = 0,
   staggerDelay = 0.04,
-  as: Tag = 'span',
 }: SplitTextProps) {
   const shouldReduceMotion = useReducedMotion()
 

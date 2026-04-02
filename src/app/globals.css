@@ -64,14 +64,14 @@
     --card-hover-bg:       #18181b;
 
     /* ── Dashboard tokens ─────────────────────────
-       Dark base with elevated surfaces. Amber accent.
+       Dark base with elevated surfaces. Green accent.
     ──────────────────────────────────────────────── */
-    --dash-bg:             #0c0c0b;   /* near-black base */
+    --dash-bg:             #0a0f0c;   /* near-black with green tint */
     --dash-fg:             #e8e6e1;   /* warm off-white text */
     --dash-muted:          #6b6a67;   /* secondary labels */
-    --dash-border:         #222220;   /* subtle dark border */
-    --dash-surface:        #141412;   /* card surfaces */
-    --dash-surface-hover:  #1c1c1a;   /* hover state */
+    --dash-border:         #1e2420;   /* subtle dark green-tinted border */
+    --dash-surface:        #111714;   /* card surfaces — slightly green-tinted */
+    --dash-surface-hover:  #192119;   /* hover state */
 
     --dash-sidebar-bg:     #0a0a09;   /* deepest black sidebar */
     --dash-sidebar-fg:     #e8e6e1;   /* warm off-white */
@@ -79,13 +79,13 @@
     --dash-sidebar-border: #1a1a18;   /* ink border */
     --dash-sidebar-active-bg: #1a1a18;
 
-    --dash-accent:         #d97706;   /* amber-600 */
-    --dash-accent-muted:   #2d1f06;   /* dark amber bg for badges */
-    --dash-accent-fg:      #fbbf24;   /* amber-400 text on dark */
+    --dash-accent:         #22c55e;   /* green-500 — matches site brand */
+    --dash-accent-muted:   #0a2818;   /* dark green bg for badges */
+    --dash-accent-fg:      #4ade80;   /* green-400 text on dark */
     --dash-danger:         #dc2626;   /* red-600 */
     --dash-danger-muted:   #1c0a0a;   /* dark red bg */
-    --dash-success:        #16a34a;   /* green-600 */
-    --dash-success-muted:  #0a1c0f;   /* dark green bg */
+    --dash-success:        #22c55e;   /* green-500 */
+    --dash-success-muted:  #0a2818;   /* dark green bg */
 
     --waves-color1:        #FFFFFF;
     --waves-color2:        #a1a1aa;

@@ -20,7 +20,7 @@ interface ChartData {
   domestic: number
 }
 
-function CustomTooltip({ active, payload, label }: any) {
+function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: { color: string; name: string; value: number }[]; label?: string }) {
   if (active && payload && payload.length) {
     return (
       <div 
@@ -29,7 +29,7 @@ function CustomTooltip({ active, payload, label }: any) {
       >
         <p className="text-[11px] font-bold uppercase tracking-wider mb-2" style={{ color: T.muted }}>{label}</p>
         <div className="space-y-1">
-          {payload.map((entry: any, index: number) => (
+          {payload.map((entry: { color: string; name: string; value: number }, index: number) => (
             <div key={index} className="flex items-center justify-between gap-6">
                <span className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: T.fg }}>
                  <div className="w-2 h-2 rounded-full" style={{ background: entry.color }} />

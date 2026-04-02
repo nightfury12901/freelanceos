@@ -68,7 +68,6 @@ export function CheckoutButton() {
         },
       }
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const rzp = new (window as any).Razorpay(options)
       rzp.on('payment.failed', function (response: any) {
         alert(`Payment failed: ${response.error.description}`)

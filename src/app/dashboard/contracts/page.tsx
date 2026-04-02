@@ -111,7 +111,6 @@ export default async function ContractsPage() {
             <TableBody>
               {rows.map((contract) => {
                 // Ignore TS any on fields here for simplicity
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 const fields = contract.fields_json as any
 
                 return (

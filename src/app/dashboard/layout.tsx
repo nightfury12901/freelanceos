@@ -64,10 +64,21 @@ export default async function DashboardLayout({
         className="ml-[220px] flex-1 min-h-screen relative overflow-hidden"
         style={{ background: 'var(--dash-bg)' }}
       >
-        <div className="fixed inset-0 z-0 opacity-40">
+        <div className="fixed inset-0 z-0 opacity-30" style={{ pointerEvents: 'none' }}>
            <Particles moveParticlesOnHover={true} />
         </div>
-        <div className="mx-auto max-w-6xl px-8 py-8 lg:px-10 lg:py-10 relative z-10">
+        {/* Green ambient glow — top right, matches reference */}
+        <div
+          className="fixed z-0 pointer-events-none"
+          style={{
+            top: '-120px',
+            right: '-80px',
+            width: '520px',
+            height: '520px',
+            background: 'radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)',
+          }}
+        />
+        <div className="relative z-10 h-screen flex flex-col overflow-hidden">
           {children}
         </div>
       </main>

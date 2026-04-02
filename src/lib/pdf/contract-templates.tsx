@@ -1,5 +1,4 @@
 import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
-import type { Database } from "@/lib/supabase/types";
 
 const styles = StyleSheet.create({
   page: {
@@ -99,7 +98,7 @@ export function ContractPDFTemplate(props: ContractProps) {
             <Text style={styles.header}>Non-Disclosure Agreement</Text>
             
             <Text style={styles.paragraph}>
-              This Non-Disclosure Agreement (the "Agreement") is entered into on {dateStr} (the "Effective Date"), by and between:
+              This Non-Disclosure Agreement (the &quot;Agreement&quot;) is entered into on {dateStr} (the &quot;Effective Date&quot;), by and between:
             </Text>
 
             <View style={styles.row}>
@@ -113,7 +112,7 @@ export function ContractPDFTemplate(props: ContractProps) {
 
             <Text style={styles.sectionTitle}>1. Definition of Confidential Information</Text>
             <Text style={styles.paragraph}>
-              "Confidential Information" means all non-public, confidential or proprietary information disclosed before, on, or after the Effective Date, by the Disclosing Party to the Receiving Party or its affiliates, or to any of such Receiving Party's or its affiliates' employees, officers, directors, partners, or agents (collectively, "Representatives"), whether disclosed orally or disclosed or accessed in written, electronic or other form or media, and whether or not marked, designated or otherwise identified as "confidential".
+              &quot;Confidential Information&quot; means all non-public, confidential or proprietary information disclosed before, on, or after the Effective Date, by the Disclosing Party to the Receiving Party or its affiliates, or to any of such Receiving Party&apos;s or its affiliates&apos; employees, officers, directors, partners, or agents (collectively, &quot;Representatives&quot;), whether disclosed orally or disclosed or accessed in written, electronic or other form or media, and whether or not marked, designated or otherwise identified as &quot;confidential&quot;.
             </Text>
 
             <Text style={styles.sectionTitle}>2. Obligations</Text>
@@ -134,7 +133,7 @@ export function ContractPDFTemplate(props: ContractProps) {
             <Text style={styles.header}>Statement of Work (SOW)</Text>
             
             <Text style={styles.paragraph}>
-              This Statement of Work is effective {dateStr} (the "Effective Date"), under the terms of the Master Services Agreement or general independent contractor terms between the parties below:
+              This Statement of Work is effective {dateStr} (the &quot;Effective Date&quot;), under the terms of the Master Services Agreement or general independent contractor terms between the parties below:
             </Text>
 
             <View style={styles.row}>
@@ -176,7 +175,7 @@ export function ContractPDFTemplate(props: ContractProps) {
             <Text style={styles.header}>Monthly Retainer Agreement</Text>
             
             <Text style={styles.paragraph}>
-              This Retainer Agreement is effective {dateStr} (the "Effective Date"), by and between:
+              This Retainer Agreement is effective {dateStr} (the &quot;Effective Date&quot;), by and between:
             </Text>
 
             <View style={styles.row}>

@@ -17,7 +17,7 @@ export async function POST() {
       .from("users")
       .select("plan_tier")
       .eq("id", user.id)
-      .single() as { data: any; error: any };
+      .single() as { data: { plan_tier: string | null } | null; error: Error | null };
 
     if (profile?.plan_tier === "pro") {
       return NextResponse.json(
@@ -62,7 +62,7 @@ export async function POST() {
       amount: order.amount,
       currency: order.currency,
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("[Razorpay/POST]", err);
     return NextResponse.json(
       { error: "Internal server error" },

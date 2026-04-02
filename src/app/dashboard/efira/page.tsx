@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { FileCheck, FileX, ArrowUpRight, HelpCircle } from 'lucide-react'
+import { FileCheck, FileX, HelpCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import type { Database } from '@/lib/supabase/types'
 import { Badge } from '@/components/ui/badge'
@@ -29,13 +29,6 @@ function formatDate(iso: string) {
   }).format(new Date(iso))
 }
 
-function formatAmount(n: number) {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'USD', // Often exports are in USD, but UI states INR currently. Keeping generic.
-    maximumFractionDigits: 2,
-  }).format(n)
-}
 
 export default async function EfiraTrackerPage() {
   const supabase = await createClient()
@@ -111,7 +104,7 @@ export default async function EfiraTrackerPage() {
           <div className="text-center max-w-sm">
             <p className="text-base font-medium text-white">No export invoices found</p>
             <p className="mt-2 text-sm text-slate-400">
-              e-FIRAs are only tracked for "Export (LUT)" invoices. Create one to start tracking.
+              e-FIRAs are only tracked for &quot;Export (LUT)&quot; invoices. Create one to start tracking.
             </p>
           </div>
           <Link

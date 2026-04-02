@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { z } from "zod";
-import type { Database } from "@/lib/supabase/types";
 
 type TemplateType = "nda" | "sow" | "retainer" | string;
 

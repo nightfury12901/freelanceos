@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { motion, LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, FileText, Send } from 'lucide-react'
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 
 const LineWaves = dynamic(() => import('@/components/ui/line-waves'), { ssr: false })
